@@ -53,4 +53,15 @@ public interface InventorySystem {
     // TODO: maybe throw exception?
     @Nullable
     InventoryViewPlayer getInventory(Player player);
+
+    ItemStack getItem(InventoryComponent component, SlotType slot);
+
+    boolean setItem(InventoryComponent component, SlotType slot, ItemStack stack);
+
+    ItemStack getItem(InventoryComponent component, int slot);
+
+    boolean setItem(InventoryComponent component, int slot, ItemStack stack);
+
+    void clear(InventoryComponent component);
+
 }

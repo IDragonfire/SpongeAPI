@@ -30,24 +30,43 @@ package org.spongepowered.api.inventory;
 public interface InventoryComponent extends Iterable<ItemStack> {
 
     /**
-     *
      * @return amount of slots
      */
     int getSlotSize();
 
     /**
+     * Calls {@link org.spongepowered.api.inventory.InventorySystem#getItem(InventoryComponent, SlotType)}
      *
      * @param type abstraction for the slot index
+     *
      * @return Item stack for a {@link org.spongepowered.api.inventory.SlotType}
      */
     ItemStack getItem(SlotType type);
 
     /**
+     * Calls {@link org.spongepowered.api.inventory.InventorySystem#setItem(InventoryComponent, SlotType, ItemStack)}
+     */
+    boolean setItem(SlotType slot, ItemStack stack);
+
+    /**
      * Subject to change.
+     * Calls {@link org.spongepowered.api.inventory.InventorySystem#getItem(InventoryComponent, int)}
+     *
      * @param slot raw slot count for the component
+     *
      * @return Item stack for the raw slot index
      */
     ItemStack getItem(int slot);
+
+    /**
+     * Calls {@link org.spongepowered.api.inventory.InventorySystem#setItem(InventoryComponent, int, ItemStack)}
+     */
+    boolean setItem(int slot, ItemStack stack);
+
+    /**
+     * Calls {@link org.spongepowered.api.inventory.InventorySystem#clear(InventoryComponent)} )}
+     */
+    void clear();
 
     /**
      * @return get first free block.
