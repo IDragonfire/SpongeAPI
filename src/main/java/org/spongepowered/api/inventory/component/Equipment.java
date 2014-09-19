@@ -30,7 +30,7 @@ import org.spongepowered.api.inventory.SlotType;
 /**
  * Describes the Equipment Area.
  */
-public interface Equipment extends InventoryComponent{
+public interface Equipment extends InventoryComponent {
 
     /**
      * @return the slot for the Helmet

@@ -69,7 +69,7 @@ public interface InventoryComponent extends Iterable<ItemStack> {
     void clear();
 
     /**
-     * @return get first free block.
+     * @return get first free slot.
      */
     SlotType getFirstAirSlot();
 

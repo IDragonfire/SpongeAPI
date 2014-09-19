@@ -41,7 +41,6 @@ public interface InventoryView extends Iterable<InventoryComponent> {
     InventoryComponent[] getComponents();
 
     /**
-     *
      * @return holder of the inventory
      */
     InventoryHolder getHolder();

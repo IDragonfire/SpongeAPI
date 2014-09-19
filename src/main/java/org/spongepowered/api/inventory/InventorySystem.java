@@ -54,14 +54,45 @@ public interface InventorySystem {
     @Nullable
     InventoryViewPlayer getInventory(Player player);
 
+    /**
+     * @param component Inventory Part
+     * @param slot      abstract slot
+     *
+     * @return item (if empty air)
+     */
     ItemStack getItem(InventoryComponent component, SlotType slot);
 
+    /**
+     * @param component Inventory Part
+     * @param slot      abstract slot
+     * @param stack     Item for replacement
+     *
+     * @return item was set
+     */
     boolean setItem(InventoryComponent component, SlotType slot, ItemStack stack);
 
+    /**
+     * @param component Inventory Part
+     * @param slot      raw slot index
+     *
+     * @return item (if empty air)
+     */
     ItemStack getItem(InventoryComponent component, int slot);
 
+    /**
+     * @param component Inventory Part
+     * @param slot      raw slot index
+     * @param stack     item for replacement
+     *
+     * @return item was set
+     */
     boolean setItem(InventoryComponent component, int slot, ItemStack stack);
 
+    /**
+     * clear the content of the component.
+     *
+     * @param component Inventory Part
+     */
     void clear(InventoryComponent component);
 
 }
