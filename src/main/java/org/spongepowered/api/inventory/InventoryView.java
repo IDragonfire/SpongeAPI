@@ -25,7 +25,8 @@
 package org.spongepowered.api.inventory;
 
 /**
- * @author Dragonfire
+ * GameObject, cs.Entity Logical an inventory.
+ * Contains {@link org.spongepowered.api.inventory.InventoryComponent}.
  */
 public interface InventoryView extends Iterable<InventoryComponent> {
 
@@ -41,7 +42,7 @@ public interface InventoryView extends Iterable<InventoryComponent> {
 
     /**
      *
-     * @return holer of the inventory
+     * @return holder of the inventory
      */
     InventoryHolder getHolder();
 }

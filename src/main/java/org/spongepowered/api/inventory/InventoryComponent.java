@@ -53,4 +53,9 @@ public interface InventoryComponent extends Iterable<ItemStack> {
      * @return get first free block.
      */
     SlotType getFirstAirSlot();
+
+    /**
+     * @return return the entity/parent/inventory
+     */
+    InventoryView getInventory();
 }

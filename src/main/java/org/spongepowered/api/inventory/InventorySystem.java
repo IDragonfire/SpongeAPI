@@ -36,16 +36,18 @@ import javax.annotation.Nullable;
 public interface InventorySystem {
 
     /**
-     *
      * @param entity a entity
+     *
      * @return the Inventory or null
      */
     @Nullable
-    InventoryView getInventory( Entity entity);
+    InventoryView getInventory(Entity entity);
 
     /**
      * Try to get a vanilla Player Inventory from the player
+     *
      * @param player to fetch a vanilla inventory
+     *
      * @return vanilla player inventory or null if failed
      */
     // TODO: maybe throw exception?
