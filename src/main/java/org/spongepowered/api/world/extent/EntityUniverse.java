@@ -23,22 +23,27 @@
  * THE SOFTWARE.
  */
 
-package org.spongepowered.api.event.voxel;
+package org.spongepowered.api.world.extent;
 
-import org.spongepowered.api.block.Block;
-import org.spongepowered.api.event.Event;
-import org.spongepowered.api.world.Voxel;
+import org.spongepowered.api.entity.Entity;
+
+import java.util.Collection;
 
 /**
- * Describes events which contain a {@link Block} wrapped by a {@link Voxel}
+ * A container of {@link Entity} instances.
  */
-public interface VoxelEvent extends Event {
+public interface EntityUniverse {
 
     /**
-     * Get {@link Voxel} included in the event
+     * Return a collection of entities contained within this universe,
+     * possibly only returning entities only in loaded areas.
      *
-     * @return Event {@link Voxel}
+     * <p>For world implementations, only some parts of the world is usually
+     * loaded, so this method will only return entities within those loaded
+     * parts.</p>
+     *
+     * @return A collection of entities
      */
-    Voxel getVoxel();
+    Collection<Entity> getEntities();
 
 }

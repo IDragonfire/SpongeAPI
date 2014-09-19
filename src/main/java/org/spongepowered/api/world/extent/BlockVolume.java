@@ -23,45 +23,38 @@
  * THE SOFTWARE.
  */
 
-package org.spongepowered.api.entity;
+package org.spongepowered.api.world.extent;
 
-import java.util.Collection;
+import org.spongepowered.api.block.Block;
+import org.spongepowered.api.math.Vector3i;
 
 /**
- * For Objects that contain Entities.
+ * A volume containing blocks.
  */
-public interface EntityUniverse {
+public interface BlockVolume {
 
     /**
-     * Gets a {@link Collection} of Entities for this universe.
+     * Get the block (type) at the given position.
      *
-     * @return A {@link Collection} of all Entities in this universe.
+     * <p>If the position is outside the bounds of the volume, the behavior
+     * is undefined. Implementations may return "air" as the given block, but
+     * may also return any other valid block.</p>
+     *
+     * @param position The position
+     * @return The block type
      */
-    Collection<Entity> getEntities();
+    Block getBlock(Vector3i position);
 
     /**
-     * Gets a {@link Collection} of LivingEntities for this universe.
+     * Set the block (type) at the given location.
      *
-     * @return A {@link Collection} of all LivingEntities in this universe.
-     */
-    Collection<LivingEntity> getLivingEntities();
-
-    /**
-     * Gets a {@link Collection} of Entities, in this universe, with
-     * the given class/interface.
+     * <p>If the position is outside the bounds of the volume, then no change
+     * should occur and {@code false] should be returned.</p>
      *
-     * @param entityClass The class for the type of Entities which are trying
-     *                    to be matched.
-     * @return A {@link Collection} of Entities based upon the given class.
+     * @param position The position
+     * @param block The block type
+     * @return True if a change potentially occurred
      */
-    <T extends Entity> Collection<T> getEntitiesByClass(Class<T> entityClass);
-
-    /**
-     * Gets a {@link Collection} of Entities, in this universe, with the given classes/interfaces.
-     *
-     * @param entityClasses The classes for the types of Entities which are trying to be matched.
-     * @return A {@link Collection} of Entities based upon the given classes.
-     */
-    Collection<Entity> getEntitiesByClasses(Class<? extends Entity>... entityClasses);
+    boolean setBlock(Vector3i position, Block block);
 
 }

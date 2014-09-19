@@ -25,27 +25,26 @@
 
 package org.spongepowered.api.world;
 
-import org.spongepowered.api.entity.EntityUniverse;
+import org.spongepowered.api.math.Vector2i;
+import org.spongepowered.api.world.extent.Extent;
 
 /**
- * Chunks are 16x256x16 (x/y/z) containers of {@link Block}s
- * in a specific {@link World}. Chunks use chunk coordinates, which are simply
- * block coordinates divided by 16 (one chunk every 16 blocks).
+ * A chunk is a specific grid-aligned partition of a {@link Extent}.
+ *
+ * <p>In Minecraft, the chunk is 16 by 16 blocks on the X and Z axes. The height
+ * of each chunk varies between worlds.</p>
  */
-public interface Chunk extends EntityUniverse, VoxelVolume {
+public interface Chunk extends Extent {
 
     /**
-     * Gets the x chunk coordinate of this chunk as it appears in the {@link World}.
+     * Get the position of the chunk.
      *
-     * @return X chunk coordinate
-     */
-    int getX();
-
-    /**
-     * Gets the z chunk coordinate of this chunk as it appears in the {@link World}.
+     * <p>The returned position is the position of the chunk in the chunk
+     * coordinate space. That means that a block at (5, 5) would be in a chunk
+     * with coordinates (0, 0).</p>
      *
-     * @return Z chunk coordinate
+     * @return The position
      */
-    int getZ();
+    Vector2i getPosition();
 
 }
