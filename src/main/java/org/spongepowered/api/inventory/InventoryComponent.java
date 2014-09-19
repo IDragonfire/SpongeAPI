@@ -3,7 +3,7 @@ package org.spongepowered.api.inventory;
 /**
  * @author Dragonfire
  */
-public interface InventoryComponent {
+public interface InventoryComponent extends Iterable<ItemStack>{
 
     int getSlotSize();
 
