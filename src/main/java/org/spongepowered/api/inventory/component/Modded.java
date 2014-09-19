@@ -22,26 +22,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.inventory;
+package org.spongepowered.api.inventory.component;
 
 /**
- * @author Dragonfire
+ * Labels a modded Component
  */
-public interface InventoryView extends Iterable<InventoryComponent> {
-
-    /**
-     * @return name of the inventory
-     */
-    String getName();
-
-    /**
-     * @return get Components, all Inventory Parts, e.g. CraftingGrid, Hotbar, ...
-     */
-    InventoryComponent[] getComponents();
-
-    /**
-     *
-     * @return holer of the inventory
-     */
-    InventoryHolder getHolder();
+interface Modded {
 }
